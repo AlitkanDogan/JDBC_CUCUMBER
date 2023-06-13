@@ -13,7 +13,21 @@ public class Manage {
 
 
 
+    private String q4Query = "select is_active from heallife_hospitaltraining.bed where created_at = '2021-10-25 03:34:25'";
+
+    public String getQ5Query() {
+        return q5Query;
+    }
+
+    private String q5Query = "select * from heallife_hospitaltraining.bed where is_active= 'no' and bed_group_id=4";
+
+    public String getQ6Query() {
+        return q6Query;
+    }
+
+    private String q6Query ="select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5";
     private String q3Query = "select * from heallife_hospitaltraining.appointment_queue where `created_at` between  '2023-5-1' and '2023-5-31'";
+
     public String getQuerySabah() {
         return querySabah;
     }
@@ -34,6 +48,9 @@ public class Manage {
         return q2Query;
     }
 
-    public String getQ3Query() {return q3Query;}
+    public String getQ3Query() {
+        return q3Query;
+    }
+    public String getQ4Query() {return q4Query;}
 
 }

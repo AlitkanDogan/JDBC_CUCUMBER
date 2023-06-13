@@ -13,16 +13,14 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="9b353c24-b140-4663-a377-5743911b0c7c">
-      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA["select * from heallife_hospitaltraining.appointment_queue where `created_at` between  '2023-5-1' and '2023-5-31'"]]></console>
+      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="9b353c24-b140-4663-a377-5743911b0c7c" object-ref="schemas/heallife_hospitaltraining/tables/appointment_queue" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.appointment" active-filter-id="017cdb93-7d2f-4cf5-8bba-99a22017d321">
@@ -30,6 +28,8 @@
         <condition column="amount" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.birth_report" active-filter-id="" />
+    <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.bed" active-filter-id="" />
     <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.appointment_payment" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.appointment_queue" active-filter-id="EMPTY_FILTER" />
   </component>

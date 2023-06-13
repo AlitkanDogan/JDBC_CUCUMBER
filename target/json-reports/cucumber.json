@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "line": 6,
+        "line": 8,
         "name": "",
         "description": "",
         "type": "background",
@@ -11,24 +11,24 @@
         "steps": [
           {
             "result": {
-              "duration": 1056800,
+              "duration": 1064200200,
               "status": "passed"
             },
-            "line": 7,
+            "line": 9,
             "name": "Database baglantisi kurulur.",
             "match": {
               "location": "stepDefinitions.Stepdefinition.database_baglantisi_kurulur()"
             },
-            "keyword": "* "
+            "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2023-06-13T01:20:46.102Z",
-        "line": 10,
-        "name": "Database üzerinden appointment tablosundaki patient_id \u003d 20 olan hastanin canli muayene isteginin acik oldugunu dogrulayiniz.",
+        "start_timestamp": "2023-06-13T21:36:06.685Z",
+        "line": 12,
+        "name": "Database uzerinden bed tablosunda created_at \u003d 2021-10-25 03:34:25 olan yatagin active oldugunu dogrulayiniz.",
         "description": "",
-        "id": "q1;database-üzerinden-appointment-tablosundaki-patient-id-\u003d-20-olan-hastanin-canli-muayene-isteginin-acik-oldugunu-dogrulayiniz.",
+        "id": "q4;database-uzerinden-bed-tablosunda-created-at-\u003d-2021-10-25-03:34:25-olan-yatagin-active-oldugunu-dogrulayiniz.",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
@@ -36,35 +36,35 @@
             "result": {
               "status": "undefined"
             },
-            "line": 12,
-            "name": "appoimtment query gönderilir ve  donuc fogrulanır.",
+            "line": 14,
+            "name": "bed tablosuna sorgu gonderilir ve sonuc dogrulanir.",
             "match": {},
-            "keyword": "* "
+            "keyword": "Then "
           },
           {
             "result": {
               "status": "skipped"
             },
-            "line": 14,
+            "line": 16,
             "name": "Database baglantisi kapatilir.",
             "match": {
               "location": "stepDefinitions.Stepdefinition.database_baglantisi_kapatilir()"
             },
-            "keyword": "* "
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@Q1"
+            "name": "@Q4"
           }
         ]
       }
     ],
-    "name": "Q1",
+    "name": "Q4",
     "description": "",
-    "id": "q1",
+    "id": "q4",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/JDBCPratik_1.feature",
+    "uri": "file:src/test/resources/JDBCPratik_4.feature",
     "tags": []
   }
 ]

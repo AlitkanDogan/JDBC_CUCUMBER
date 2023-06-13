@@ -170,6 +170,42 @@ public class Stepdefinition {
             System.out.println(rs.getString(1));
         }
     }
+    //Q4---------------------------------------------------------------------------
+    @Then("bed tablosuna sorgu gonderilir ve sonuc dogrulanir.")
+    public void bed_tablosuna_sorgu_gonderilir_ve_sonuc_dogrulanir() throws SQLException {
+        rs=getStatement().executeQuery(manage.getQ4Query());
+        rs.next();
+        String expectedResult="yes";
+        String ectualResult=rs.getString(1);
+        assertEquals(expectedResult,ectualResult);
+
+    }
+
+    //Q5----------------------------------------------------------------
+
+    @Then("bed tablosuna query5 gönderilir ve name bilgisinin {int} olduğu doğrulanır.")
+    public void bed_tablosuna_query5_gönderilir_ve_name_bilgisinin_olduğu_doğrulanır(Integer int1) throws SQLException {
+
+        rs=getStatement().executeQuery(manage.getQ5Query());
+        rs.first();
+
+        String expectedName="105";
+        String actualName=rs.getString("name");
+        assertEquals(expectedName,actualName);
+
+    }
+    //Q6_----------------------------------------------------------------
+    @Given("Databese'e query gonderılır ve sonuc dogrulanır")
+    public void databese_e_query_gonderılır_ve_sonuc_dogrulanır() throws SQLException {
+      rs=getStatement().executeQuery(manage.getQ6Query());
+      rs.next();
+
+        int expectedCount=6;
+       int actualCount= Integer.parseInt(rs.getString(1));
+        assertEquals(expectedCount,actualCount);
+
+    }
+
 }
 
 
