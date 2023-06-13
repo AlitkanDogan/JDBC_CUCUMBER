@@ -1,0 +1,56 @@
+Soru 1: Database üzerinden appointment tablosundaki patient_id = 20 olan hastanin canli muayene isteginin acik oldugunu dogrulayiniz.
+
+
+
+Soru 2: Database üzerinden appointment_payment tablosunda odeme turu olarak "offline" secenl hasta id'lerinin (1,2,3,16,17,18,20,21,24,25,31) oldugunu dogrulayiniz.
+
+
+
+Soru 3: Database üzerinden 2023 yili Mayis ayinda olusturulan icerikleri appointment_queue sutununa göre siralayin.
+
+
+
+Soru 4: Database uzerinden bed tablosunda created_at = 2021-10-25 03:34:25 olan yatagin active oldugunu dogrulayiniz.
+
+
+
+Soru 5: Database üzerinden bed tablosunda bed group id'si 4 ve is_active= "no" olan hastanin name bilgisinin 105 oldugunu dogrulayiniz.
+
+
+
+Soru 6: Database üzerinden birth_report tablosunda agirligi 2,5 kg ve ustu olan bebek sayisinin 6 oldugunu dogrulayiniz.
+
+
+
+Soru 7: Database üzerinden birth_report tablosunda kardes olan bebekleri listeleyip isimlerini dogrulayiniz.
+
+
+
+Soru 8: Database üzerinden blood_donor tablosundaki id= 7 olan donorun donor_name'i Maria, date_of_birth=2001-03-02, gender=Female, father_name=Jhonson, address=England oldugunu dogrulayiniz.
+
+
+
+Soru 9: Database uzerinden charge_categories tablosundaki name bilgisi "P" ile baslayan iceriklerin charge_type_id numaralarini tekrardan arindirilmis olarak listeleyiniz ve dogrulayiniz. (6 , 7)
+
+
+Soru 10: Database üzerinden death_report tablosundaki ölüm tarihlerine göre en son ölen hastanin guardian_name bilgisinin Kane Stark oldugunu dogrulayiniz.
+
+
+
+Soru 11: Database üzerinden discharge_card tablosundaki opd_details_id'si 11 ile 31 arasindaki (11 ve 31 haric) verlerin created_at bilgilerini dogrulayiniz.
+
+
+
+Soru 12: Database üzerinden doctor_shift tablosunda staff_id=2 olan doctorun sali gunu kac saat calistigini dogrulayiniz. (2)
+
+
+
+Soru 13: Database üzerinden medicine_supplier tablosundaki address bilgisi "Andheri, Mumbai" olan verinin diger bilgilerinin dogru oldugunu kontrol ediniz.
+
+
+
+Soru 14: Database üzerinden staff tablosundaki qualification=MS, specialization= Neurology olan iceriklerin account_title verilerini harf sirasina göre siralayarak listeyiniz.
+
+
+
+Soru 15: Database üzerinden vehicles tablosundaki araclarin manufacture_year bilgisine göre en eskiden yeniye listelendiginde ve created_at bilgisine görede eskiden yeniye siralanip listelendiginde iki listede de ayni indexte yer alan arac oldugunu dogrulayiniz.

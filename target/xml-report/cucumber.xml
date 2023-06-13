@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.326">
+    <testcase classname="Q1" name="Database üzerinden appointment tablosundaki patient_id = 20 olan hastanin canli muayene isteginin acik oldugunu dogrulayiniz." time="0.079">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[* Database baglantisi kurulur...............................................passed
+* appoimtment query gönderilir ve  donuc fogrulanır.........................undefined
+* Database baglantisi kapatilir.............................................skipped
+]]>
+        </failure>
+    </testcase>
+</testsuite>

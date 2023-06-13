@@ -1,0 +1,70 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1056800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Database baglantisi kurulur.",
+            "match": {
+              "location": "stepDefinitions.Stepdefinition.database_baglantisi_kurulur()"
+            },
+            "keyword": "* "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-06-13T01:20:46.102Z",
+        "line": 10,
+        "name": "Database üzerinden appointment tablosundaki patient_id \u003d 20 olan hastanin canli muayene isteginin acik oldugunu dogrulayiniz.",
+        "description": "",
+        "id": "q1;database-üzerinden-appointment-tablosundaki-patient-id-\u003d-20-olan-hastanin-canli-muayene-isteginin-acik-oldugunu-dogrulayiniz.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12,
+            "name": "appoimtment query gönderilir ve  donuc fogrulanır.",
+            "match": {},
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Database baglantisi kapatilir.",
+            "match": {
+              "location": "stepDefinitions.Stepdefinition.database_baglantisi_kapatilir()"
+            },
+            "keyword": "* "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Q1"
+          }
+        ]
+      }
+    ],
+    "name": "Q1",
+    "description": "",
+    "id": "q1",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/JDBCPratik_1.feature",
+    "tags": []
+  }
+]
