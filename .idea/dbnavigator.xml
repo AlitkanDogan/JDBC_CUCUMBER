@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="9b353c24-b140-4663-a377-5743911b0c7c">
-      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5]]></console>
+      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select * from heallife_hospitaltraining.appointment_queue where `created_at` between  '2023-5-1' and '2023-5-31']]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">

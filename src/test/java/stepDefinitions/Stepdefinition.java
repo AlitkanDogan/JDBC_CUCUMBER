@@ -12,9 +12,7 @@ import utilities.Manage;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.*;
 import static utilities.JDBCReusableMethods.getResultset;
@@ -166,10 +164,30 @@ public class Stepdefinition {
 
         rs=getStatement().executeQuery(manage.getQ3Query());
 
+        Map map=new TreeMap();
+
+        Object value="";
+
+        int colum=2;
         while (rs.next()){
-            System.out.println(rs.getString(1));
+
+            for (int i = 2; i <8 ; i++) {
+                value+=", "+rs.getString(i);
+            }
+
+            map.put(rs.getInt("id"),value);
+
+            colum++;
+            value="";
         }
-    }
+        for (Object each:map.entrySet()
+             ) {
+            System.out.println(each);
+
+        }
+
+        }
+
     //Q4---------------------------------------------------------------------------
     @Then("bed tablosuna sorgu gonderilir ve sonuc dogrulanir.")
     public void bed_tablosuna_sorgu_gonderilir_ve_sonuc_dogrulanir() throws SQLException {
@@ -204,6 +222,14 @@ public class Stepdefinition {
        int actualCount= Integer.parseInt(rs.getString(1));
         assertEquals(expectedCount,actualCount);
 
+    }
+
+    //Q7____________________________________________________________________
+    @Given("birth_report tablosuna query gönderilir sonuc dogrulanır")
+    public void birth_report_tablosuna_query_gönderilir_sonuc_dogrulanır() throws SQLException {
+       rs=getStatement().executeQuery(manage.getQ7Query());
+
+       rs.next();
     }
 
 }

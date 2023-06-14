@@ -26,6 +26,12 @@ public class Manage {
     }
 
     private String q6Query ="select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5";
+
+    public String getQ7Query() {
+        return q7Query;
+    }
+
+    private String q7Query ="select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5";
     private String q3Query = "select * from heallife_hospitaltraining.appointment_queue where `created_at` between  '2023-5-1' and '2023-5-31'";
 
     public String getQuerySabah() {
