@@ -168,16 +168,15 @@ public class Stepdefinition {
 
         Object value="";
 
-        int colum=2;
         while (rs.next()){
 
-            for (int i = 2; i <8 ; i++) {
+            for (int i = 2; i <=6 ; i++) {
                 value+=", "+rs.getString(i);
             }
 
             map.put(rs.getInt("id"),value);
 
-            colum++;
+
             value="";
         }
         for (Object each:map.entrySet()
@@ -227,9 +226,34 @@ public class Stepdefinition {
     //Q7____________________________________________________________________
     @Given("birth_report tablosuna query gönderilir sonuc dogrulanır")
     public void birth_report_tablosuna_query_gönderilir_sonuc_dogrulanır() throws SQLException {
-       rs=getStatement().executeQuery(manage.getQ7Query());
 
-       rs.next();
+        String sorgu1="SELECT father_name FROM heallife_hospitaltraining.birth_report group by father_name having count(*)>1 ";
+        rs=getStatement().executeQuery(sorgu1);
+        rs.next();
+        String baba=(String) rs.getString(1);
+        String sorgu2="SELECT child_name FROM heallife_hospitaltraining.birth_report where father_name="+"'"+baba+"'";
+        rs=getStatement().executeQuery(sorgu2);
+
+
+        List<String> expectedChildList=new ArrayList<>();
+        expectedChildList.add("Rohit");
+        expectedChildList.add("Reyana");
+        expectedChildList.add("child");
+        List<String> actualChildList=new ArrayList<>();
+        while (rs.next()){
+            actualChildList.add(rs.getString(1));
+        }
+
+        assertEquals(expectedChildList,actualChildList);
+
+
+
+
+
+
+
+
+
     }
 
 }

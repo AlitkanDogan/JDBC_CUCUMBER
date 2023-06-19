@@ -4,8 +4,11 @@ Feature: Q6
 
     #Soru 7: Database üzerinden birth_report tablosunda kardes olan bebekleri listeleyip isimlerini dogrulayiniz.
 
+
   @Q7
   Scenario: Database üzerinden birth_report tablosunda kardes olan bebekleri listeleyip isimlerini dogrulayiniz.
+
+    * Database baglantisi kurulur.
 
     * birth_report tablosuna query gönderilir sonuc dogrulanır
 

@@ -13,7 +13,11 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="9b353c24-b140-4663-a377-5743911b0c7c">
-      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select * from heallife_hospitaltraining.appointment_queue where `created_at` between  '2023-5-1' and '2023-5-31']]></console>
+      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select child_name as child1, child_name as child2, child_name as chil from heallife_hospitaltraining.birth_report 
+SELECT father_name FROM heallife_hospitaltraining.birth_report group by father_name having count(*)>1 
+SELECT child_name FROM heallife_hospitaltraining.birth_report where father_name='Mahesh'
+select father_name='Mahesh' from heallife_hospitaltraining.birth_report where select
+select * from heallife_hospitaltraining.birth_report;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
