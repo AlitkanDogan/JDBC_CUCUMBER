@@ -27,6 +27,12 @@ public class Manage {
 
     private String q6Query ="select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5";
 
+    public String getQ8Query() {
+        return q8Query;
+    }
+
+    private String q8Query="select * from heallife_hospitaltraining.blood_donor where id=7";
+
     public String getQ7Query() {
         return q7Query;
     }

@@ -141,60 +141,60 @@ public class Stepdefinition {
     @Then("appointment_payment tablosuna query gonderilir ve sonuclar dogrulanir.")
     public void appointment_paymentTablosunaQueryGonderilirVeSonuclarDogrulanir() throws SQLException {
 
-        rs=getStatement().executeQuery(manage.getQ2Query());
+        rs = getStatement().executeQuery(manage.getQ2Query());
 
         ArrayList<Integer> actualList = new ArrayList<>();
 
-        while (rs.next()){
+        while (rs.next()) {
             actualList.add(rs.getInt(1));
         }
 
-        int[] array={1,2,3,16,17,18,20,21,24,25,31};
-        ArrayList<Integer> expectedList=new ArrayList<>();
+        int[] array = {1, 2, 3, 16, 17, 18, 20, 21, 24, 25, 31};
+        ArrayList<Integer> expectedList = new ArrayList<>();
 
-        for (int i = 0; i <array.length ; i++) {
+        for (int i = 0; i < array.length; i++) {
             expectedList.add(array[i]);
         }
-        assertEquals(expectedList,actualList);
+        assertEquals(expectedList, actualList);
     }
 
     //Q3__________________________________________________________
     @Then("appointment_queue tablosuna Q3 gondrilir ve sonuc getirilir.")
     public void appointment_queue_tablosuna_q3_gondrilir_ve_sonuc_getirilir() throws SQLException {
 
-        rs=getStatement().executeQuery(manage.getQ3Query());
+        rs = getStatement().executeQuery(manage.getQ3Query());
 
-        Map map=new TreeMap();
+        Map map = new TreeMap();
 
-        Object value="";
+        Object value = "";
 
-        while (rs.next()){
+        while (rs.next()) {
 
-            for (int i = 2; i <=6 ; i++) {
-                value+=", "+rs.getString(i);
+            for (int i = 2; i <= 6; i++) {
+                value += ", " + rs.getString(i);
             }
 
-            map.put(rs.getInt("id"),value);
+            map.put(rs.getInt("id"), value);
 
 
-            value="";
+            value = "";
         }
-        for (Object each:map.entrySet()
-             ) {
+        for (Object each : map.entrySet()
+        ) {
             System.out.println(each);
 
         }
 
-        }
+    }
 
     //Q4---------------------------------------------------------------------------
     @Then("bed tablosuna sorgu gonderilir ve sonuc dogrulanir.")
     public void bed_tablosuna_sorgu_gonderilir_ve_sonuc_dogrulanir() throws SQLException {
-        rs=getStatement().executeQuery(manage.getQ4Query());
+        rs = getStatement().executeQuery(manage.getQ4Query());
         rs.next();
-        String expectedResult="yes";
-        String ectualResult=rs.getString(1);
-        assertEquals(expectedResult,ectualResult);
+        String expectedResult = "yes";
+        String ectualResult = rs.getString(1);
+        assertEquals(expectedResult, ectualResult);
 
     }
 
@@ -203,23 +203,24 @@ public class Stepdefinition {
     @Then("bed tablosuna query5 gönderilir ve name bilgisinin {int} olduğu doğrulanır.")
     public void bed_tablosuna_query5_gönderilir_ve_name_bilgisinin_olduğu_doğrulanır(Integer int1) throws SQLException {
 
-        rs=getStatement().executeQuery(manage.getQ5Query());
+        rs = getStatement().executeQuery(manage.getQ5Query());
         rs.first();
 
-        String expectedName="105";
-        String actualName=rs.getString("name");
-        assertEquals(expectedName,actualName);
+        String expectedName = "105";
+        String actualName = rs.getString("name");
+        assertEquals(expectedName, actualName);
 
     }
+
     //Q6_----------------------------------------------------------------
     @Given("Databese'e query gonderılır ve sonuc dogrulanır")
     public void databese_e_query_gonderılır_ve_sonuc_dogrulanır() throws SQLException {
-      rs=getStatement().executeQuery(manage.getQ6Query());
-      rs.next();
+        rs = getStatement().executeQuery(manage.getQ6Query());
+        rs.next();
 
-        int expectedCount=6;
-       int actualCount= Integer.parseInt(rs.getString(1));
-        assertEquals(expectedCount,actualCount);
+        int expectedCount = 6;
+        int actualCount = Integer.parseInt(rs.getString(1));
+        assertEquals(expectedCount, actualCount);
 
     }
 
@@ -227,34 +228,58 @@ public class Stepdefinition {
     @Given("birth_report tablosuna query gönderilir sonuc dogrulanır")
     public void birth_report_tablosuna_query_gönderilir_sonuc_dogrulanır() throws SQLException {
 
-        String sorgu1="SELECT father_name FROM heallife_hospitaltraining.birth_report group by father_name having count(*)>1 ";
-        rs=getStatement().executeQuery(sorgu1);
+        String sorgu1 = "SELECT father_name FROM heallife_hospitaltraining.birth_report group by father_name having count(*)>1 ";
+        rs = getStatement().executeQuery(sorgu1);
         rs.next();
-        String baba=(String) rs.getString(1);
-        String sorgu2="SELECT child_name FROM heallife_hospitaltraining.birth_report where father_name="+"'"+baba+"'";
-        rs=getStatement().executeQuery(sorgu2);
+        String baba = (String) rs.getString(1);
+        String sorgu2 = "SELECT child_name FROM heallife_hospitaltraining.birth_report where father_name=" + "'" + baba + "'";
+        rs = getStatement().executeQuery(sorgu2);
 
 
-        List<String> expectedChildList=new ArrayList<>();
+        List<String> expectedChildList = new ArrayList<>();
         expectedChildList.add("Rohit");
         expectedChildList.add("Reyana");
         expectedChildList.add("child");
-        List<String> actualChildList=new ArrayList<>();
-        while (rs.next()){
+        List<String> actualChildList = new ArrayList<>();
+
+        while (rs.next()) {
             actualChildList.add(rs.getString(1));
         }
 
-        assertEquals(expectedChildList,actualChildList);
+        assertEquals(expectedChildList, actualChildList);
+    }
 
+    //Q8_________________________________________________________
+    @Given("blood_donor tablosuna query gonderilir, gelen sonuc dogrulanir")
+    public void blood_donor_tablosuna_query_gonderilir_gelen_sonuc_dogrulanir() throws SQLException {
+        rs = getStatement().executeQuery(manage.getQ8Query());
 
+        rs.next();
 
+        String expected = "Maria";
+        String actual = rs.getString(2);
+        assertTrue(actual.contains(expected));
 
+        expected = "2001-03-02";
+        actual = rs.getString(3);
+        assertTrue(actual.contains(expected));
 
+        expected = "Jhonson";
+        actual = rs.getString(6);
+        assertTrue(actual.contains(expected));
 
-
-
+        expected = "England";
+        actual = rs.getString(7);
+        assertTrue(actual.contains(expected));
 
     }
+    //Q9______________________________________________________
+
+    @Given("Charge_categories tablosuna query gonderılır ve sonuc dogrulanır")
+    public void charge_categories_tablosuna_query_gonderılır_ve_sonuc_dogrulanır() {
+
+    }
+
 
 }
 

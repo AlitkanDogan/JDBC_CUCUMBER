@@ -1,4 +1,4 @@
-Feature: Q6
+Feature: Q7
   Background:
     * Database baglantisi kurulur.
 
@@ -7,8 +7,6 @@ Feature: Q6
 
   @Q7
   Scenario: Database üzerinden birth_report tablosunda kardes olan bebekleri listeleyip isimlerini dogrulayiniz.
-
-    * Database baglantisi kurulur.
 
     * birth_report tablosuna query gönderilir sonuc dogrulanır
 
