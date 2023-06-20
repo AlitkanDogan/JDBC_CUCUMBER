@@ -276,9 +276,39 @@ public class Stepdefinition {
     //Q9______________________________________________________
 
     @Given("Charge_categories tablosuna query gonderılır ve sonuc dogrulanır")
-    public void charge_categories_tablosuna_query_gonderılır_ve_sonuc_dogrulanır() {
+    public void charge_categories_tablosuna_query_gonderılır_ve_sonuc_dogrulanır() throws SQLException {
+        rs = getStatement().executeQuery(manage.getQ9Query());
+
+        List<String> expectedList = new ArrayList<>();
+        expectedList.add("6");
+        expectedList.add("7");
+
+        System.out.println("expected : " + expectedList);
+
+        List<String> actualList = new ArrayList<>();
+        while (rs.next()) {
+            actualList.add(rs.getString(1));
+        }
+
+
+        System.out.println("actual : " + actualList);
+
+        assertEquals(expectedList, actualList);
 
     }
+
+    //Q10_-------------------------------------------------------------
+    @Given("death_report toplosuna query gönderilir gelen responce dogrulanir")
+    public void death_report_toplosuna_query_gönderilir_gelen_responce_dogrulanir() throws SQLException {
+        rs=getStatement().executeQuery(manage.getQ10Query());
+
+rs.next();
+String expectedResult= "Kane Stark";
+String actualResuld=rs.getString(1);
+assertEquals(expectedResult,actualResuld);
+
+    }
+
 
 
 }
