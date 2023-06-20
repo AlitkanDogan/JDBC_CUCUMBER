@@ -1,11 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="1.384">
-    <testcase classname="Q4" name="Database uzerinden bed tablosunda created_at = 2021-10-25 03:34:25 olan yatagin active oldugunu dogrulayiniz." time="1.135">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Given Database baglantisi kurulur...........................................passed
-Then bed tablosuna sorgu gonderilir ve sonuc dogrulanir.....................undefined
-And Database baglantisi kapatilir...........................................skipped
-]]>
-        </failure>
-    </testcase>
-</testsuite>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.085"/>

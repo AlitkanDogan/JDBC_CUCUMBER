@@ -9,6 +9,12 @@ public class Manage {
 
     private String q2Query = "select id from heallife_hospitaltraining.appointment_payment where payment_type = 'Offline'";
 
+    public String getQ12Query() {
+        return q12Query;
+    }
+
+    private String q12Query = "select * from heallife_hospitaltraining.doctor_shift where staff_id = 2 And day='Tuesday'";
+
     private String q1Query = "Select live_consult from  heallife_hospitaltraining.appointment where patient_id=20";
 
     public String getQ10Query() {
@@ -18,8 +24,14 @@ public class Manage {
     private String q10Query = "select guardian_name from heallife_hospitaltraining.death_report    order by  death_date desc";
 
 
-
     private String q4Query = "select is_active from heallife_hospitaltraining.bed where created_at = '2021-10-25 03:34:25'";
+
+    public String getQ11Query() {
+        return q11Query;
+    }
+
+    private String q11Query = "select created_at from heallife_hospitaltraining.discharge_card where opd_details_id between 12 and 31";
+
 
     public String getQ5Query() {
         return q5Query;
@@ -31,24 +43,25 @@ public class Manage {
         return q6Query;
     }
 
-    private String q6Query ="select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5";
+    private String q6Query = "select count(id) from heallife_hospitaltraining.birth_report where weight>=2.5";
 
     public String getQ8Query() {
         return q8Query;
     }
-private String q9Query ="select distinct charge_type_id from heallife_hospitaltraining.charge_categories where name like 'P%'";
+
+    private String q9Query = "select distinct charge_type_id from heallife_hospitaltraining.charge_categories where name like 'P%'";
 
     public String getQ9Query() {
         return q9Query;
     }
 
-    private String q8Query="select * from heallife_hospitaltraining.blood_donor where id=7";
+    private String q8Query = "select * from heallife_hospitaltraining.blood_donor where id=7";
 
     public String getQ7Query() {
         return q7Query;
     }
 
-    private String q7Query ="";
+    private String q7Query = "";
     private String q3Query = "select * from heallife_hospitaltraining.appointment_queue where `created_at` between  '2023-5-1' and '2023-5-31'";
 
     public String getQuerySabah() {
@@ -74,6 +87,9 @@ private String q9Query ="select distinct charge_type_id from heallife_hospitaltr
     public String getQ3Query() {
         return q3Query;
     }
-    public String getQ4Query() {return q4Query;}
+
+    public String getQ4Query() {
+        return q4Query;
+    }
 
 }

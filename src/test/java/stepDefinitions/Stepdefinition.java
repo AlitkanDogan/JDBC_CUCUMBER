@@ -15,7 +15,7 @@ import java.sql.Statement;
 import java.util.*;
 
 import static org.junit.Assert.*;
-import static utilities.JDBCReusableMethods.getResultset;
+
 import static utilities.JDBCReusableMethods.getStatement;
 
 
@@ -300,15 +300,50 @@ public class Stepdefinition {
     //Q10_-------------------------------------------------------------
     @Given("death_report toplosuna query gönderilir gelen responce dogrulanir")
     public void death_report_toplosuna_query_gönderilir_gelen_responce_dogrulanir() throws SQLException {
-        rs=getStatement().executeQuery(manage.getQ10Query());
+        rs = getStatement().executeQuery(manage.getQ10Query());
 
-rs.next();
-String expectedResult= "Kane Stark";
-String actualResuld=rs.getString(1);
-assertEquals(expectedResult,actualResuld);
+        rs.next();
+        String expectedResult = "Kane Stark";
+        String actualResuld = rs.getString(1);
+        assertEquals(expectedResult, actualResuld);
 
     }
+    //Q11_-------------------------------------------------------------
+    @Given("discharge_card tablosuna query gönderilir responce doğrulanır")
+    public void discharge_card_tablosuna_query_gönderilir_responce_doğrulanır() throws SQLException {
+        rs = getStatement().executeQuery(manage.getQ11Query());
 
+        List<String> expectedList = new ArrayList<>();
+        expectedList.add("2021-10-28 04:48:56");
+        expectedList.add("2023-05-03 13:34:59");
+        expectedList.add("2023-05-03 13:25:15");
+
+        System.out.println("expected : " + expectedList);
+
+        List<String> actualList = new ArrayList<>();
+        while (rs.next()) {
+            actualList.add(rs.getString(1));
+        }
+
+
+        System.out.println("actual : " + actualList);
+
+        assertEquals(expectedList, actualList);
+
+    }
+//Q12_-------------------------------------------------------------
+@Given("doctor_shift tablosuna query gönderilir responce doğrulanır")
+public void doctor_shift_tablosuna_query_gönderilir_responce_doğrulanır() throws SQLException {
+
+        rs = getStatement().executeQuery(manage.getQ12Query());
+
+        int expectedResult=2;
+        rs.next();
+        int actualResult=Integer.parseInt(rs.getString(6))-Integer.parseInt(rs.getString(5));
+    System.out.println(actualResult);
+
+
+    }
 
 
 }

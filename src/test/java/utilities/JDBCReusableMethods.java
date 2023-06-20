@@ -8,15 +8,15 @@ import java.util.Map;
 
 public class JDBCReusableMethods {
 
-   public static Connection connection;
+    public static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
 
-
-    public static void createConnection()  {
-        String url=ConfigReader.getProperty("db_credentials_url");
-        String username=ConfigReader.getProperty("db_username");
-        String password=ConfigReader.getProperty("db_password");
+    //Database ile bağlantı kurma
+    public static void createConnection() {
+        String url = ConfigReader.getProperty("db_credentials_url");
+        String username = ConfigReader.getProperty("db_username");
+        String password = ConfigReader.getProperty("db_password");
 
         try {
             connection = DriverManager.getConnection(url, username, password);
@@ -28,7 +28,7 @@ public class JDBCReusableMethods {
 
     public static void updateQuery(String query) throws SQLException {
 
-        int st =  statement.executeUpdate(query);
+        int st = statement.executeUpdate(query);
 
         System.out.println(st);
     }
@@ -74,7 +74,6 @@ public class JDBCReusableMethods {
     }
 
 
-
     //    used to close the connectivity
     public static void closeConnection() {
         try {
@@ -95,8 +94,8 @@ public class JDBCReusableMethods {
 
     public static Connection getConnection() {
         String url = "";
-        String username="";
-        String password="";
+        String username = "";
+        String password = "";
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
@@ -105,7 +104,6 @@ public class JDBCReusableMethods {
         }
         return connection;
     }
-
 
 
     //used to get statement
@@ -120,7 +118,6 @@ public class JDBCReusableMethods {
     }
 
 
-
     //Use this to get the ResutSet object
     public static ResultSet getResultset() {
         try {
@@ -133,46 +130,46 @@ public class JDBCReusableMethods {
     }
 
 
-
-
     // This method returns the number fo row in a table in the database
     public static int getRowCount() throws Exception {
         resultSet.last();
         int rowCount = resultSet.getRow();
         return rowCount;
     }
+
     /**
      * @return returns a single cell value. If the results in multiple rows and/or
-     *         columns of data, only first column of the first row will be returned.
-     *         The rest of the data will be ignored
+     * columns of data, only first column of the first row will be returned.
+     * The rest of the data will be ignored
      */
     public static Object getCellValue(String query) {
 
         return getQueryResultList(query).get(0).get(0);
     }
+
     /**
      * @return returns a list of Strings which represent a row of data. If the query
-     *         results in multiple rows and/or columns of data, only first row will
-     *         be returned. The rest of the data will be ignored
+     * results in multiple rows and/or columns of data, only first row will
+     * be returned. The rest of the data will be ignored
      */
     public static List<Object> getRowList(String query) {
 
         return getQueryResultList(query).get(0);
     }
+
     /**
      * @return returns a map which represent a row of data where key is the column
-     *         name. If the query results in multiple rows and/or columns of data,
-     *         only first row will be returned. The rest of the data will be ignored
+     * name. If the query results in multiple rows and/or columns of data,
+     * only first row will be returned. The rest of the data will be ignored
      */
     public static Map<String, Object> getRowMap(String query) {
         return getQueryResultMap(query).get(0);
     }
+
     /**
      * @return returns query result in a list of lists where outer list represents
-     *         collection of rows and inner lists represent a single row
+     * collection of rows and inner lists represent a single row
      */
-
-
 
 
     public static List<List<Object>> getQueryResultList(String query) {
@@ -194,11 +191,10 @@ public class JDBCReusableMethods {
         }
         return rowList;
     }
+
     /**
      * @return list of values of a single column from the result set
      */
-
-
 
 
     public static List<Object> getColumnData(String query, String column) {
@@ -216,14 +212,14 @@ public class JDBCReusableMethods {
         }
         return rowList;
     }
+
     /**
      * @return returns query result in a list of maps where the list represents
-     *         collection of rows and a map represents represent a single row with
-     *         key being the column name
+     * collection of rows and a map represents represent a single row with
+     * key being the column name
      */
 
 
-    
     public static List<Map<String, Object>> getQueryResultMap(String query) {
         executeQuery(query);
         List<Map<String, Object>> rowList = new ArrayList<>();

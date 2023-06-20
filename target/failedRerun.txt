@@ -1,1 +1,0 @@
-file:src/test/resources/JDBCPratik_4.feature:12

@@ -13,8 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="9b353c24-b140-4663-a377-5743911b0c7c">
-      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select distinct charge_type_id from heallife_hospitaltraining.charge_categories where name like 'P%';
-select guardian_name from heallife_hospitaltraining.death_report    order by  death_date desc]]></console>
+      <console name="Connection" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select * from heallife_hospitaltraining.doctor_shift where staff_id = 2 And day='Tuesday';]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -35,7 +34,9 @@ select guardian_name from heallife_hospitaltraining.death_report    order by  de
         <condition column="amount" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.discharge_card" active-filter-id="" />
     <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.birth_report" active-filter-id="" />
+    <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.doctor_shift" active-filter-id="" />
     <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.bed" active-filter-id="" />
     <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.appointment_payment" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9b353c24-b140-4663-a377-5743911b0c7c" dataset="heallife_hospitaltraining.death_report" active-filter-id="" />
